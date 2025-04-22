@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DistanceConverter{
-  public static class FeetConverter {
+namespace Exercise02 {
+    public class Inchconverter {
         private const double ratio = 0.3048;
-        
+
         //メートルからフィートを求める
         public static double FromMeter(double meter) {
             return meter / ratio;
         }
         //フィートからメートルを求める
-        public  static double ToMeter(double feet) {
+        public static double ToMeter(double feet) {
             return feet * ratio;
 
         }
-
-
-
     }
 }
