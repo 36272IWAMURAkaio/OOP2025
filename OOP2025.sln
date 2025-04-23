@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "演習問題", "演習問�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceConverter", "DistanceConverter\DistanceConverter.csproj", "{FA673D3E-FAF3-45AF-AF0C-CF155680B447}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distanceyard", "Distanceyard\Distanceyard.csproj", "{C7CC1CDA-8E30-4DF7-8A5F-0CFDCEFD857E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FA673D3E-FAF3-45AF-AF0C-CF155680B447}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA673D3E-FAF3-45AF-AF0C-CF155680B447}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA673D3E-FAF3-45AF-AF0C-CF155680B447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CC1CDA-8E30-4DF7-8A5F-0CFDCEFD857E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CC1CDA-8E30-4DF7-8A5F-0CFDCEFD857E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CC1CDA-8E30-4DF7-8A5F-0CFDCEFD857E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CC1CDA-8E30-4DF7-8A5F-0CFDCEFD857E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 		{A0048A89-4C44-4B90-BBDD-AE03ECC4C0B4} = {D901A5FF-5690-42BE-895D-6BCE4A825BDB}
 		{D901A5FF-5690-42BE-895D-6BCE4A825BDB} = {48880B47-AFAA-4790-84B1-F67AA9185B08}
 		{FA673D3E-FAF3-45AF-AF0C-CF155680B447} = {D901A5FF-5690-42BE-895D-6BCE4A825BDB}
+		{C7CC1CDA-8E30-4DF7-8A5F-0CFDCEFD857E} = {D901A5FF-5690-42BE-895D-6BCE4A825BDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8719ABA0-EEAE-4DFD-9F13-F9A24176C3CB}
