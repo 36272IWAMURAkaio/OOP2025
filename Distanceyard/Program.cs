@@ -18,7 +18,7 @@ class Program {
             Console.WriteLine("\nメートル → ヤード変換:");
             for (int meter = 1; meter <= 10; meter++) {
                 double yards = meter * 1.09361;
-                Console.WriteLine($"{meter} m = {yards:F4} yd");
+                Console.WriteLine($"{meter} m = {yards:F4} yard");
             }
         }
     }
