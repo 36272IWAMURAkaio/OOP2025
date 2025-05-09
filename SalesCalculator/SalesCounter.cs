@@ -10,9 +10,10 @@ namespace SalesCalculator {
         private readonly List<Sale> _sales;
 
         //コンストラクタ
-        public SalesCounter(List<Sale> sales) {
-            _sales = sales;
+        public SalesCounter(String filePath) {
+            _sales = ReadSales(filePath);
         }
+
 
         //店舗別売り上げを求める
         public Dictionary<string, int> GetPerStoreSales() {
