@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "売上集計プログラム
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalculator", "SalesCalculator\SalesCalculator.csproj", "{A7F27181-925D-44E7-AEB3-CB49CAFEC732}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01", "FormApps\オブジェクト指向プログラミングⅠ\演習問題\Exercise01\Exercise01.csproj", "{EFC9C318-A375-4352-A057-B6A0FC9F47DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{A7F27181-925D-44E7-AEB3-CB49CAFEC732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7F27181-925D-44E7-AEB3-CB49CAFEC732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7F27181-925D-44E7-AEB3-CB49CAFEC732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC9C318-A375-4352-A057-B6A0FC9F47DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC9C318-A375-4352-A057-B6A0FC9F47DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC9C318-A375-4352-A057-B6A0FC9F47DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC9C318-A375-4352-A057-B6A0FC9F47DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{927AC185-5B38-43EE-975F-EDD14B783A7B} = {ACDE89D7-C42E-4B98-94D1-DCB4F65CE61A}
 		{9B6F5C8B-23D0-466E-96BA-A9282D4A1014} = {ACDE89D7-C42E-4B98-94D1-DCB4F65CE61A}
 		{A7F27181-925D-44E7-AEB3-CB49CAFEC732} = {3C182785-FDC9-4CD5-B29B-38B0A8F4850F}
+		{EFC9C318-A375-4352-A057-B6A0FC9F47DE} = {D901A5FF-5690-42BE-895D-6BCE4A825BDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8719ABA0-EEAE-4DFD-9F13-F9A24176C3CB}
