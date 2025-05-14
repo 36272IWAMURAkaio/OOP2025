@@ -1,27 +1,57 @@
-﻿namespace Exercise01 {
+﻿using Exercise01;
+using System.ComponentModel.DataAnnotations;
+
+namespace Exercise01 {
     internal class Program {
-        static void Main(string[] args) {//2.1.3
+        static void Main(string[] args) {
+            //歌データを入れるリストオブジェクト
+            var songs = new List<Song>();
 
-            var songs = new Song[] {
-    new Song("Let it be", "The Beatles", 243),
-    new Song("Bridge Over Troubled Water", "Simon & Garfunkel", 293),
-    new Song("Close To You", "Carpenters", 276),
-    new Song("Honesty", "Billy Joel", 231),
-    new Song("I Will Always Love You", "Whitney Houston", 273),
-};
+            Console.WriteLine("*****曲の登録*****");
+            //何件入れるかわからないので無限ループ
+            while (true) {
+                //曲名を出力
+                Console.WriteLine("曲名:");
+                //入力された曲名を取得
+                string title = Console.ReadLine();
 
+                //endが入力されたら登録終了
+                if (title.Equals("end",StringComparison.OrdinalIgnoreCase)) return;
 
+                Console.WriteLine("アーティスト名:");
+                //入力されたアーティスト名を取得
+                string ArtistName = Console.ReadLine();
 
+                Console.WriteLine("演奏時間 :");
+                //入力された演奏時間を取得
+                int Length = int.Parse(Console.ReadLine());
+
+                //Songのインスタンス
+                Song song = new Song() {
+                    Title = title,
+                    ArtistName = artistName,
+                    Length = Length
+                };
+                //歌データを入れるリストオブジェクトへ登録
+                songs.Add(song);
+
+                Console.WriteLine();
+            }
 
         }
-
-        //2.1.4
-        private static void printSongs(Song[] songs) {
-            WriteLine
-
-        }
-
-
-
     }
 }
+
+
+//2.1.4
+//private static void printSongs(Song[] songs) {
+
+#if false
+            foreach (var song in songs) {
+                var timespan = TimeSpan .FromSeconds(song.Length);
+                Console.WriteLine($"{song.Title},{song.ArtistName} {timespan.Minutes}:{timespan.Seconds:00}");
+
+            }
+            Console.WriteLine();
+        }
+#endif

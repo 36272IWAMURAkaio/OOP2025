@@ -17,7 +17,7 @@ namespace Exercise01 {
             ArtistName = artistname;
             Length = length;
         }
-        public Song() { }
+
 
 
     }
