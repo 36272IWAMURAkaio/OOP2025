@@ -16,7 +16,7 @@ namespace Exercise01 {
                 string title = Console.ReadLine();
 
                 //endが入力されたら登録終了
-                if (title.Equals("end",StringComparison.OrdinalIgnoreCase)) return;
+                if (title.Equals("end", StringComparison.OrdinalIgnoreCase)) break;
 
                 Console.WriteLine("アーティスト名:");
                 //入力されたアーティスト名を取得
@@ -29,7 +29,7 @@ namespace Exercise01 {
                 //Songのインスタンス
                 Song song = new Song() {
                     Title = title,
-                    ArtistName = artistName,
+                    ArtistName = ArtistName,
                     Length = Length
                 };
                 //歌データを入れるリストオブジェクトへ登録
@@ -44,14 +44,7 @@ namespace Exercise01 {
 
 
 //2.1.4
-//private static void printSongs(Song[] songs) {
+private static void printSongs(List<Song> songs) {
 
-#if false
-            foreach (var song in songs) {
-                var timespan = TimeSpan .FromSeconds(song.Length);
-                Console.WriteLine($"{song.Title},{song.ArtistName} {timespan.Minutes}:{timespan.Seconds:00}");
 
-            }
-            Console.WriteLine();
-        }
-#endif
+    Console.WriteLine();
