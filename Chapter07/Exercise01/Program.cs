@@ -1,6 +1,7 @@
 ﻿
 
 using System.Diagnostics.Metrics;
+using System.Linq;
 
 namespace Exercise01 {
     internal class Program {
@@ -23,30 +24,42 @@ namespace Exercise01 {
             Exercise5(numbers);
 
 
-            
+
 
         }
 
         private static void Exercise1(int[] numbers) {
-            int max = numbers.Max();
-            Console.WriteLine($"最大値は:{max}");
+            Console.WriteLine(numbers.Max());
         }
 
         private static void Exercise2(int[] numbers) {
-            var books = new List<int>;
+
+
+            foreach (var n in numbers.TakeLast(2)) {
+                Console.WriteLine(n);
+            }
+
         }
 
         private static void Exercise3(int[] numbers) {
-            throw new NotImplementedException();
+            var strs = numbers.Select(n => n.ToString("000"));
+            foreach (var s in strs) {
+                Console.WriteLine(s);
+
+            }
         }
 
         private static void Exercise4(int[] numbers) {
-            throw new NotImplementedException();
+            foreach (var n in numbers.OrderBy(n => n).Take(3)) {
+                Console.WriteLine(n);
+
+            }
         }
 
         private static void Exercise5(int[] numbers) {
-            throw new NotImplementedException();
+            var count = numbers.Distinct().Where(n => n >= 10).Count();
+            Console.WriteLine(count);
+
         }
-    }
     }
 }
