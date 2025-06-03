@@ -18,16 +18,13 @@
         /// <param name="key">"Novelist","BestWork","Born"</param>
         /// <returns>"作家","代表作","誕生年"</returns>
         static string ToJapanese(string key) {
-            switch (key) {
-                case "Novelist":
-                    return "作家";
-                case "BestWork":
-                    return "代表作";
-                case "Born":
-                    return "誕生年";
-                default:
-                    return "不明";
-            }
+            return key switch {
+                "Novelist" => "作家",
+                "BestWork" => "代表作",
+                "Born" => "誕生年",
+                => "不明"
+            };
+            
         }
     }
 }
