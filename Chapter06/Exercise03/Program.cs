@@ -23,6 +23,9 @@ namespace Exercise02 {
             Console.WriteLine("6.3.5");
             Exercise5(text);
 
+            Console.WriteLine("6.3.6");
+            Exercise6(text);
+
 
         }
 
@@ -44,6 +47,7 @@ namespace Exercise02 {
                 sb.Append(" ");
                 sb.Append(word);
             }
+            //末尾はピリオドで終わる
             Console.WriteLine(sb + ".");
             }
 
@@ -56,7 +60,27 @@ namespace Exercise02 {
             var words = text.Split(' ').Where(s => s.Length <= 4);
 
             foreach (var word in words) ;
-            Console.WriteLine(word);
+            Console.WriteLine(words);
                 }
+
+        private static void Exercise6(string text) {
+            var str = text.ToLower();
+
+            var alphDicCount = Enumerable.Range('a', 26)
+                .ToDictionary(num => ((char)num).ToString(), num => 0);
+
+            foreach (var alph in str) {
+                alphDicCount[alph.ToString()]++;
+            }
+            foreach(var item in alphDicCount) {
+                Console.WriteLine($"{item.Key}:{item.Value}");
+            }
+            //Linkを使った方法
+            for (char ch ='a'; ch <= 'z'; ch++) {
+                Console.WriteLine($"{ch}:{text.Count(tc => tc == ch)}");
+            }
+            }
+            
+        }
     }
-}
+
