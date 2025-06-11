@@ -32,15 +32,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01", "FormApps\オブジェクト指向プログラミングⅠ\演習問題\Exercise01\Exercise01.csproj", "{EFC9C318-A375-4352-A057-B6A0FC9F47DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter03", "Chapter03", "{30CAA5A6-3A90-4C85-BD5D-7CC8F46DC156}"
-	ProjectSection(SolutionItems) = preProject
-		Chapter03\演習問題\Exercise01\Exercise01.csproj = Chapter03\演習問題\Exercise01\Exercise01.csproj
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section01", "Section01\Section01.csproj", "{E2FACCC1-EF58-41C7-AC84-A9BD96EE4B0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "演習問題", "演習問題", "{F84C98D8-FFED-4922-BEC7-A8489A37E046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise2", "Excercise2\Excercise2.csproj", "{D11B7E24-C6BE-4BCD-AA5A-071AB993A1D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Count", "Excercise2\Count.csproj", "{D11B7E24-C6BE-4BCD-AA5A-071AB993A1D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "section04", "section04\section04.csproj", "{ADFE75A7-AB06-418E-A339-39FA831231E1}"
 EndProject

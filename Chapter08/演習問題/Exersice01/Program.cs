@@ -1,4 +1,6 @@
 ﻿
+using System.Diagnostics.Contracts;
+
 namespace Exersice01 {
     internal class Program {
         static void Main(string[] args) {
@@ -8,7 +10,7 @@ namespace Exersice01 {
             Console.WriteLine();
 
             Exercise2(text);
-
+            Console.WriteLine();
         }
 
 
@@ -16,7 +18,7 @@ namespace Exersice01 {
             var dict = new Dictionary<Char, int>();//ディクショナリを作る
             foreach (var c in text.ToUpper()) {//大文字に変換
                 //アルファベット(A～Z)ならディクショナリに登録
-                if ('A'<= c && c <= 'Z') {
+                if ('A' <= c && c <= 'Z') {
                     if (dict.ContainsKey(c))//ディクショナリにCharがあるかContainkey
                         dict[c]++;
                     else//一文字取り出し
@@ -29,9 +31,27 @@ namespace Exersice01 {
             }
         }
 
-
         private static void Exercise2(string text) {
-
+            var dict = new SortedDictionary<char, int>();//ディクショナリを作る
+            foreach (var c in text.ToUpper()) {//大文字に変換
+                //アルファベット(A～Z)ならディクショナリに登録
+                if ('A' <= c && c <= 'Z') {
+                    if (dict.ContainsKey(c))//ディクショナリにCharがあるかContainkey
+                        dict[c]++;
+                    else//一文字取り出し
+                        dict[c] = 1;
+                }
+            }
+            //アルファベット順に並び替えて出力
+            foreach (var pair in dict.OrderBy(p => p.Key)) {
+                Console.WriteLine($"{pair.Key}:{pair.Value}");
+            }
         }
     }
+
 }
+
+
+
+
+    
