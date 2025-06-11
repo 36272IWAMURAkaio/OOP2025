@@ -48,7 +48,7 @@ namespace Section04 {
             Console.WriteLine("a = " + a + " b = " + b);
             #endregion
 
-            string? inputData = Console.ReadLine();
+            var inputData = Console.ReadLine();
 
             if(int.TryParse(inputData,out var number)){
                 Console.WriteLine(number);

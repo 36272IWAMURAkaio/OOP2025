@@ -44,14 +44,14 @@ namespace Exercise02 {
             if (ym is null) {
                 Console.WriteLine("21世紀のデータはありません");
             } else {
-                Console.WriteLine(ym);
+                Console.WriteLine(ym); 
             }
         }
         //小さくしたバージョン
         //  Console.WriteLine(FindFirst21C(ymCollection)?.ToString() ?? "21世紀のデータはありません");
         //5.2.5
         private static void Exercise5(YearMonth[] ymCollection) {
-            var array = ymCollection.Select(ym =>ym.AddOnemonth()).ToArray();
+            var array = ymCollection.Select(ym =>ym.AddOneMonth()).ToArray();
             Exercise2(array);
         }
     }

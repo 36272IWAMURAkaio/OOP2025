@@ -44,7 +44,3 @@ namespace Exercise01 {
 
 
 //2.1.4
-private static void printSongs(List<Song> songs) {
-
-
-    Console.WriteLine();
