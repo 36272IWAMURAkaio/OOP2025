@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace LINQの例 {
-    public class Person {
+    public class Person {//プロパティ
         public string Name { get; set; }
         public int Age { get; set; }
         public string City { get; set; }
