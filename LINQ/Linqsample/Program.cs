@@ -2,24 +2,16 @@
     internal class Program {
         static void Main(string[] args) {
 
-            var numbers = Enumerable.Range(1, 100);
+            var numbers = Enumerable.Range(1, 10);
 
-            ////合計値を出力
-            ////足し算
-            //Console.WriteLine(numbers.Sum());
-            ////平均
-            //Console.WriteLine(numbers.Average());
+            //合計値を出力
+            Console.WriteLine(numbers.Where(n => n % 2 == 0).Min());
 
-            Console.WriteLine(numbers.Where(n => n % 8 == 0).Max());
-            ////偶数Sum(n => n % 2));
+            //foreach (var num in numbers) {
+            //    Console.WriteLine(num);
+            //}
 
 
-        }
-
-
-    //        foreach(var num in numbers) {
-    //            Console.WriteLine(num){ 
-    //        }
         }
     }
 }
