@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Test01 {
     public class Student {
-        public string Name { get; set; }
-        public string Subject { get; set; }
-        public int Score { get; set; }
+        internal static string subject;
+
+        public string Name { get; }
+        public string Subject { get;  }
+        public int Score { get; }
+
 
 
 
