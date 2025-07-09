@@ -1,5 +1,7 @@
 ﻿
 
+using static System.Reflection.Metadata.BlobBuilder;
+
 namespace Test02 {
     internal class Program {
         static void Main(string[] args) {
@@ -72,11 +74,13 @@ namespace Test02 {
 
         //問題３　昇順に並べて表示（遅延実行とする）
         //　　　　出力結果【12 14 17 20 31 35 40 48 53 76 87 91 94】
-        private static void Exercise03(int[] numbers) => Console.WriteLine(numbers.)
-            
-            
+        private static void Exercise03(int[] numbers) => {
+            foreach (var n in numbers.OrderBy(n => n).Take(3)) 
+                Console.WriteLine(n);
+            }
+        
 
-        }
+
 
         //問題４　10以上50以下の数字のみを表示（即時実行でも可とする）
         //　　　　出力結果【12 14 20 40 35 31 17 48】
