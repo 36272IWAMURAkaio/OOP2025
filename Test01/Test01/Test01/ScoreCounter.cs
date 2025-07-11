@@ -27,7 +27,7 @@
 
         //メソッドの概要： 
         public IDictionary<string, int> GetPerStudentScore() {
-            var dict = new SortedDictionary<string, int>();
+            var dict = new Dictionary<string, int>();
             foreach (var student in _score) {
                 if (dict.ContainsKey(student.Name)) {
                     dict[student.Name] += student.Score;

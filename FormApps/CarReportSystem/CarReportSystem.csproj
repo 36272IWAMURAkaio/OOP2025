@@ -6,7 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>5.2.2.1</AssemblyVersion>
+    <AssemblyVersion>5.2.1.1</AssemblyVersion>
+    <FileVersion></FileVersion>
   </PropertyGroup>
 
 </Project>

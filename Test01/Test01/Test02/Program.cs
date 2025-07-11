@@ -1,6 +1,4 @@
-﻿
-
-using static System.Reflection.Metadata.BlobBuilder;
+﻿using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Test02 {
     internal class Program {
@@ -56,110 +54,65 @@ namespace Test02 {
             #endregion
         }
 
+        // 問題１：合計値（式形式）
+        private static void Exercise01(int[] numbers) =>
+            Console.WriteLine(numbers.Sum());
 
-        //---------------------------------------
-        // 以下の問題に書かれている内容を満たすようにプログラムを作成せよ。
-        // 必要であればラムダ式とLINQを使用すること
-        //---------------------------------------
+        // 問題２：偶数の最大値（式形式）
+        private static void Exercise02(int[] numbers) =>
+            Console.WriteLine(numbers.Where(n => n % 2 == 0).Max());
 
-        //問題１　合計値を表示（式形式で記述せよ）
-        //　　　　出力結果【618】
-        private static void Exercise01(int[] numbers) => Console.WriteLine(numbers.Sum());
+        // 問題３：昇順（遅延実行 → ToListしない）
+        private static void Exercise03(int[] numbers) {
+            var sorted = numbers.OrderBy(n => n);
+            Console.WriteLine(string.Join(" ", sorted));
+        }
 
-
-        //問題２　偶数の最大値を表示（式形式で記述せよ）
-        //　　　　出力結果【94】
-        private static void Exercise02(int[] numbers) => Console.WriteLine(numbers.Where(n => n % 2 == 0).Max());
-
-
-        //問題３　昇順に並べて表示（遅延実行とする）
-        //　　　　出力結果【12 14 17 20 31 35 40 48 53 76 87 91 94】
-        private static void Exercise03(int[] numbers) => {
-            foreach (var n in numbers.OrderBy(n => n).Take(3)) 
-                Console.WriteLine(n);
-            }
-        
-
-
-
-        //問題４　10以上50以下の数字のみを表示（即時実行でも可とする）
-        //　　　　出力結果【12 14 20 40 35 31 17 48】
+        // 問題４：10以上50以下の数字のみ
         private static void Exercise04(int[] numbers) {
-            
-
+            var filtered = numbers.Where(n => n >= 10 && n <= 50);
+            Console.WriteLine(string.Join(" ", filtered));
         }
 
-        //問題５　Countメソッドを使い、小文字の'n'が含まれている都市名がいくつあるかカウントして結果を表示
-        //　　　　出力結果【5】
+        // 問題５：小文字の'n'が含まれる都市数
         private static void Exercise05(List<string> cities) {
-            
-
+            var count = cities.Count(c => c.Contains('n'));
+            Console.WriteLine(count);
         }
 
-        //問題６　全都市数
-        //　　　　出力結果【8】
+        // 問題６：全都市数
         private static void Exercise06(List<string> cities) {
-            
-
+            Console.WriteLine(cities.Count);
         }
 
-        //問題７　各都市名をアルファベット順（昇順）に出力
-        //　　　　出力結果
-        //		  【Bangkok
-        //          Berlin
-        //          Canberra
-        //          Hong Kong
-        //          London
-        //          New Delhi
-        //          Paris
-        //          Tokyo】
+        // 問題７：各都市名をアルファベット順（昇順）に出力
         private static void Exercise07(List<string> cities) {
-            
-
+            foreach (var city in cities.OrderBy(c => c)) {
+                Console.WriteLine(city);
+            }
         }
 
-        //問題８　各都市の文字数
-        //　　　　出力結果
-        //　　　　【Tokyo : 5文字
-        //　　　　  New Delhi : 9文字
-        //　　　　  Bangkok : 7文字
-        //　　　　  London : 6文字
-        //　　　　  Paris : 5文字
-        //　　　　  Berlin : 6文字
-        //　　　　  Canberra : 8文字
-        //　　　　  Hong Kong : 9文字】
+        // 問題８：各都市の文字数
         private static void Exercise08(List<string> cities) {
-            
-
-
-
+            foreach (var city in cities) {
+                Console.WriteLine($"{city} : {city.Length}文字");
+            }
         }
 
-        //問題９　各都市名と文字数を文字数の昇順で表示
-        //　　　　出力結果
-        //        【Tokyo : 5文字
-        //          Paris : 5文字
-        //          London : 6文字
-        //          Berlin : 6文字
-        //          Bangkok : 7文字
-        //          Canberra : 8文字
-        //          New Delhi : 9文字
-        //          Hong Kong : 9文字】
+        // 問題９：都市名と文字数を文字数の昇順で出力
         private static void Exercise09(List<string> cities) {
-            
-
-
-
+            var sorted = cities.OrderBy(c => c.Length);
+            foreach (var city in sorted) {
+                Console.WriteLine($"{city} : {city.Length}文字");
+            }
         }
 
-        //問題１０　６文字の都市名を表示
-        //　　　　出力結果
-        //        【London
-        //          Berlin】
+        // 問題１０：６文字の都市名を表示
         private static void Exercise10(List<string> cities) {
-            
-
-
+            var filtered = cities.Where(c => c.Length == 6);
+            foreach (var city in filtered) {
+                Console.WriteLine(city);
+            }
         }
     }
 }

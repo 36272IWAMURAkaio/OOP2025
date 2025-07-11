@@ -23,49 +23,49 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            button1 = new Button();
+            btOK = new Button();
             label1 = new Label();
             lbVersion = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btOK
             // 
-            button1.Location = new Point(265, 178);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 31);
-            button1.TabIndex = 0;
-            button1.Text = "OK";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btOK.Location = new Point(267, 173);
+            btOK.Name = "btOK";
+            btOK.Size = new Size(94, 31);
+            btOK.TabIndex = 0;
+            btOK.Text = "OK";
+            btOK.UseVisualStyleBackColor = true;
+            btOK.Click += btOK_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("HGP創英角ｺﾞｼｯｸUB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            label1.Location = new Point(22, 19);
+            label1.Font = new Font("UD デジタル 教科書体 NK", 18F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            label1.Location = new Point(26, 35);
             label1.Name = "label1";
-            label1.Size = new Size(208, 19);
+            label1.Size = new Size(272, 28);
             label1.TabIndex = 1;
-            label1.Text = "試乗ポート管理システム";
+            label1.Text = "試乗レポート管理システム";
             // 
             // lbVersion
             // 
             lbVersion.AutoSize = true;
-            lbVersion.Location = new Point(254, 89);
+            lbVersion.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            lbVersion.Location = new Point(267, 86);
             lbVersion.Name = "lbVersion";
-            lbVersion.Size = new Size(47, 15);
+            lbVersion.Size = new Size(81, 25);
             lbVersion.TabIndex = 2;
-            lbVersion.Text = "Ver0.0.1";
-           
+            lbVersion.Text = "Ver.0.0.1";
             // 
             // fmVersion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(356, 221);
+            ClientSize = new Size(387, 231);
             Controls.Add(lbVersion);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btOK);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -78,7 +78,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button btOK;
         private Label label1;
         private Label lbVersion;
     }
