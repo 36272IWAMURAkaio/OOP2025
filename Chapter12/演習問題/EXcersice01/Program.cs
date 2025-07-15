@@ -2,6 +2,7 @@
 using System.Text.Unicode;
 using System.Text.Encodings.Web;
 using System.Xml;
+using System.Text.Json.Serialization;
 
 namespace Exercise01 {
     internal class Program {
@@ -57,23 +58,38 @@ namespace Exercise01 {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             };
             return JsonSerializer.Deserialize<Employee>(text, options);
-                
+
 
         }
 
         //問題12.1.2
         //シリアル化してファイルへ出力する
         static void Serialize(string filePath, IEnumerable<Employee> employees) {
-            using (var writer = XmlWriter.Create("employees.json")) {
+            var options = new JsonSerializerOptions {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+            byte[] utf8Bytes = JsonSerializer.SerializeToUtf8Bytes(employees, options);
+            File.WriteAllBytes(filePath, utf8Bytes);
 
-            }
         }
-
-
+        //逆シリアnaルmi化
+        static Employee[] Deserlize_f(string filePath) {
+            var option = new JsonSerializerOptions {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+            var text = File.ReadAllText(filePath);
+            var employee = JsonSerializer.Deserialize<Employee[]>(text, option);
+            return employee ?? [];
+        }
     }
-    public record Employee {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public DateTime HireDate { get; set; }
-    }
+}
+
+public record Employee {
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public DateTime HireDate { get; set; }
 }
