@@ -27,8 +27,8 @@ namespace Exercise03 {
         static void ToXmlFile(Employee[] employees) { 
             using (var writer = XmlWriter.Create("employees.xml")) {
 
-                XmlRootAttribute xRoot = new XmlRootAttribute {
-                    TupleElementNamesAttribute = "Employees"
+               XmlRootAttribute xRoot = new XmlRootAttribute {
+                    ElementNames = "Employees"
 
                 };
                 var serialize = new XmlSerialize(employees.GetType(), xRoot);
