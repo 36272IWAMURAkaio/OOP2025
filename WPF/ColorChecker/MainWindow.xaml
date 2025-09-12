@@ -5,18 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ColorChecker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="331" Width="800">
+        Title="MainWindow" Height="300" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <Label x:Name="colorArea" Margin="0" Background="black">
-
-        </Label>
-
+        <Label x:Name="colorArea" Margin="10" Background="Black"/>
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -29,36 +25,60 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="R" FontSize="30"
+            <!--ここから追加-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Ｒ" FontSize="30" 
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="rSlider" Grid.Row="0" Grid.Column="1" Maximum="255" VerticalAlignment="Center" ValueChanged="rSlider_ValueChanged"/>
+            <Slider x:Name="rSlider" Grid.Row="0" Grid.Column="1" Maximum="255" 
+                    VerticalAlignment="Center" ValueChanged="Slider_ValueChanged"/>
             <TextBox x:Name="rValue" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" FontSize="20"
-                     Text="{Binding ElementName=rSlider,Path=Value,UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}}"/>
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="G" FontSize="30"
+                     Text="{Binding ElementName=rSlider,Path=Value,
+                            UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Ｇ" FontSize="30" 
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="gSlider" Grid.Row="1" Grid.Column="1" Maximum="255" VerticalAlignment="Center" ValueChanged="rSlider_ValueChanged"/>
+            <Slider x:Name="gSlider" Grid.Row="1" Grid.Column="1" Maximum="255" 
+                    VerticalAlignment="Center" ValueChanged="Slider_ValueChanged"/>
             <TextBox x:Name="gValue" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" FontSize="20"
-         Text="{Binding ElementName=gSlider,Path=Value,UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}}"/>
-            <TextBlock Grid.Column="0" Grid.Row="2" Text="B" FontSize="30"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="bSlider" Grid.Row="2" Grid.Column="1" Maximum="255" VerticalAlignment="Center" ValueChanged="rSlider_ValueChanged"/>
-            <TextBox x:Name="bValue" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="20"
-         Text="{Binding ElementName=bSlider,Path=Value,UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}}"/>
+                     Text="{Binding ElementName=gSlider,Path=Value,
+                            UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}}"/>
 
-            <Grid>
-                <Grid Grid.Column="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="5*"/>
-                    </Grid.RowDefinitions>
-                </Grid>
-            </Grid>
-            <ComboBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="27,40,0,0" Grid.Row="3" VerticalAlignment="Top" Width="186" Height="24"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Ｂ" FontSize="30" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider x:Name="bSlider" Grid.Row="2" Grid.Column="1" Maximum="255" 
+                    VerticalAlignment="Center" ValueChanged="Slider_ValueChanged"/>
+            <TextBox x:Name="bValue" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="20"
+                     Text="{Binding ElementName=bSlider,Path=Value,
+                            UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}}"/>
+            <ComboBox x:Name="colorSelectComboBox" Grid.ColumnSpan="3" Grid.Row="3" ItemsSource="{Binding}" SelectedValue="{Binding Color}"
+          Margin="20,0" Height="24" VerticalAlignment="Center" SelectionChanged="colorSelectComboBox_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="20" Height="Auto" Margin="5,0" BorderThickness="1" BorderBrush="Black"  >
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Color}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
 
         </Grid>
-        <Button Grid.Column="2" Content="Stock" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="33" Width="231" FontSize="20"/>
-        <ListBox Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="18,48,18,10"/>
+        <Grid Grid.Column="2" Margin="14,18,14,25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="stockButton" Content="stock" Click="stockButton_Click"
+        HorizontalAlignment="Center" VerticalAlignment="Center" Width="185" Height="28" FontSize="20"/>
+
+            <ListBox x:Name="stockList" Margin="0,47,0,0" Grid.RowSpan="2" SelectionChanged="stockList_SelectionChanged">
+
+            <!--ここから追加-->
+
+            </ListBox>
+        </Grid>
     </Grid>
 </Window>
