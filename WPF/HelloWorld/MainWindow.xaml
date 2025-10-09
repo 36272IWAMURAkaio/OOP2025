@@ -5,13 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="150" Width="200">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
         <TextBlock Text="{Binding GreetingMessage}"/>
-        <Button Content="ChangeMessage" Grid.Row="1"
-                Command="{Binding ChangeMessageCommand}"/>
+        <Button Content="ChangeMessage" Grid.Row="1" 
+                Command="{Binding ChangeMessageCommand}"
+                CommandParameter="{Binding NewMessage1}"
+                IsEnabled="{Binding CanChangeMessage}"/> <!--　←削除から-->
+
+        <Button Content="ChangeMessage" Grid.Row="2"
+                Command="{Binding ChangeMessageCommand}"
+                CommandParameter="{Binding NewMessage2}"/>
     </Grid>
 </Window>

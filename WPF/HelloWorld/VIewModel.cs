@@ -1,39 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace HelloWorld
-{
-    class VIewModel : INotifyPropertyChanged 
-        {
-
-        public VIewModel() {
-            ChangeMessageCommand = new DelegateCommand(
-                () => GreetingMessage = "Bye-bye world");
+namespace HelloWorld {
+    class ViewModel : BindableBase {
+        public ViewModel() {
+            ChangeMessageCommand = new DelegateCommand<string>(
+                (par) => GreetingMessage = par,
+                (par) => GreetingMessage != par)
+                .ObservesProperty(() => GreetingMessage);
         }
-
 
         private string _greetingMessage = "Hello World!";
         public string GreetingMessage {
             get => _greetingMessage;
-            set {
-                if(_greetingMessage != value) {
-                    _greetingMessage = value;
-                    PropertyChanged?.Invoke(
-                        this, new PropertyChangedEventArgs(nameof(GreetingMessage)));
-                }
-            }
+            set => SetProperty(ref _greetingMessage, value);
         }
 
-
-        public DelegateCommand ChangeMessageCommand { get; }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public string NewMessage1 { get; } = "Bye-bye world";
+        public string NewMessage2 { get; } = "Long time no see, world!";
+        public DelegateCommand<string> ChangeMessageCommand { get; }
     }
 }
