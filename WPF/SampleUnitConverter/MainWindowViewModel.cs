@@ -40,17 +40,14 @@ namespace SampleUnitConverter {
         }
 
         public MainWindowViewModel() {
-            CurrentMetricUnit = MetricUnit.Units.First();
-            CurrentImperialUnit = ImperialUnit.Units.First();
-
 
             ImperialUnitToMetric = new DelegateCommand(
                 () => MetricValue =
                     CurrentMetricUnit.FromImperialUnit(CurrentImperialUnit, ImperialValue));
 
-            MetricValue = new DelegateCommand(
-                () => ImperialValue =
-                    CurrentMetricUnit.FromMetricUnit(CurrentImperialUnit, ImperialValue));
+            MetricToImperialunit = new DelegateCommand(
+
+                );
 
         }
     }
