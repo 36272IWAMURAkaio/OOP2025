@@ -20,6 +20,7 @@ namespace CustomeApp {
         /// <summary>
         /// 住所
         /// </summary>
+        /// 
         public string Adress { get; set; } = string.Empty;
         /// <summary>
         /// 画像
