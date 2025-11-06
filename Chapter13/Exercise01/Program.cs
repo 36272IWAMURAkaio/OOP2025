@@ -40,19 +40,60 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_4() {
-            
+            var books = Library.Books
+                .OrderByDescending(x => x.PublishedYear)
+                .ThenByDescending(x => x.Price);
+            foreach (var item in books) {
+                Console.WriteLine($"{item.PublishedYear}年{ item.Price}円 { item.Title}");
+
+            }
         }
 
         private static void Exercise1_5() {
-            
+            var categoryNames = Library.Books
+                .Where(b => b.PublishedYear == 2022)
+                .Join(Library.Categories,
+                       b => b.CategoryId,
+                       c => c.Id,
+                       (b,c) => c.Name)
+                .Distinct();
+
+            foreach (var name in categoryNames) {
+                Console.WriteLine(name);
+            }
         }
 
         private static void Exercise1_6() {
-            
+            var gropus = Library.Books
+                .Join(Library.Categories,
+                b => b.CategoryId,
+                c => c.Id,
+                (b, c) => new {
+                    CategoryName = c.Name,
+                    b.Title
+                })
+                .GroupBy(x => x.CategoryName)
+                .OrderBy(x => x.Key);
+            foreach (var group in gropus) {
+                Console.WriteLine($"#{group.Key}");
+                foreach (var book in group) {
+                    Console.WriteLine($"  {book.Title}");
+
+                }
+            }
         }
 
         private static void Exercise1_7() {
-        
+        var static void Exercise1_7() {
+                var gropus = Library.Categories
+                    .Where(x => x.Equals("Development"))
+                    .Join(Library.Books,
+                    c => c.Id,
+                    b => b.CategoryId,
+                    (c,b) => new {
+                        b.Title
+                    })
+            }
         }
 
         private static void Exercise1_8() {

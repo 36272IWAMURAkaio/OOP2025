@@ -8,7 +8,7 @@
                 
             foreach (var book in selected) {
                 Console.WriteLine($"{book!.PublishedYear}年 {book!.Title} ({book!.Price})");
-            }
+            }r
         }
     }
 }

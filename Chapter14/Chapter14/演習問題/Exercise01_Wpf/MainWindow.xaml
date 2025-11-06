@@ -1,0 +1,21 @@
+﻿<Window x:Class="SimpleWpfBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        mc:Ignorable="d"
+        Title="Simple Browser" Height="600" Width="900">
+    <DockPanel>
+        <!-- 上部コントロールバー -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5">
+            <Button x:Name="btnBack" Content="←" Width="40" Margin="2" Click="btnBack_Click"/>
+            <Button x:Name="btnForward" Content="→" Width="40" Margin="2" Click="btnForward_Click"/>
+            <TextBox x:Name="txtUrl" Width="600" Margin="5,2" KeyDown="txtUrl_KeyDown"/>
+            <Button x:Name="btnGo" Content="検索" Width="60" Margin="2" Click="btnGo_Click"/>
+        </StackPanel>
+
+        <!-- Web表示部分 -->
+        <wv2:WebView2 x:Name="webView" Margin="5"/>
+    </DockPanel>
+</Window>
