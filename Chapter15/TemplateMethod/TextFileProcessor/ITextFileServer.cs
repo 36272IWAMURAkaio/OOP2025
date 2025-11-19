@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LineCounter {
-    internal interface ITextFileServer {
-        void 
+﻿namespace TextFileProcessor {
+    public interface ITextFileService {
+        void Initialize(string fileName);
+        void Execute(string line);
+        void Terminate();
     }
 }

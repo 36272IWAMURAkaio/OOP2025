@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TextFileProcessor;
 
 namespace LineCounter {
-    public  class LineCounterService  : ITextFileService {
-         private
+    internal class LineCounterService : LineCounterProcessor;
 
-        }
+        // 今回は LineCounterProcessor をそのまま利用
+        // もし後で機能追加したいならここに書く
     }
-}
+

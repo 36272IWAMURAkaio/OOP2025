@@ -1,27 +1,21 @@
-﻿using LineCounter;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace TextFileProcessor {
-    internal class TextFileProcessor {
-        private ITextFileServer _service;
+    public class TextFileProcessor {
+        private ITextFileService _service;
 
-        public TextFileProcessor(ITextFileServer service) {
+        public TextFileProcessor(ITextFileService service) {
             _service = service;
         }
 
         public void Run(string fileName) {
             _service.Initialize(fileName);
 
-            var lines = File.ReadLines(fileName);
-            foreach (var line in lines) {
+            foreach (var line in File.ReadLines(fileName)) {
                 _service.Execute(line);
             }
+
             _service.Terminate();
         }
-
     }
 }
