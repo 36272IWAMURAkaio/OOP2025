@@ -1,21 +1,28 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
-namespace TenkiApp {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+namespace WeatherApp {
     public partial class MainWindow : Window {
+        private readonly WeatherApiService _weatherService = new WeatherApiService();
+
         public MainWindow() {
             InitializeComponent();
+        }
+
+        private async void Search_Click(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrWhiteSpace(CityTextBox.Text)) {
+                MessageBox.Show("都市名を入力してください");
+                return;
+            }
+
+            var result = await _weatherService.GetWeatherAsync(CityTextBox.Text);
+
+            if (result == null) {
+                MessageBox.Show("天気情報を取得できませんでした");
+                return;
+            }
+
+            WeatherText.Text = $"天気: {result.Weather}";
+            TempText.Text = $"気温: {result.Temperature} ℃";
         }
     }
 }

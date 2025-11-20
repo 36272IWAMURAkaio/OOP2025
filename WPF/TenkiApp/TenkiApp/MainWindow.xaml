@@ -1,0 +1,65 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="Weather" Height="650" Width="900"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <!-- 背景画像 -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/background.jpg" Stretch="UniformToFill" Opacity="0.45"/>
+        </Grid.Background>
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- 現在の天気 -->
+            <StackPanel Grid.Row="0" Margin="0 10" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Location}" FontSize="26" FontWeight="Bold" Foreground="White" TextAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding CurrentTemperature}" 
+                               FontSize="72" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="℃" FontSize="36" Foreground="White" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <TextBlock Text="{Binding Description}" FontSize="20" Foreground="White" TextAlignment="Center"/>
+            </StackPanel>
+
+            <!-- 日次予報 -->
+            <ItemsControl Grid.Row="1" Margin="0 20" ItemsSource="{Binding DailyForecast}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="10" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Date}" Foreground="White" TextAlignment="Center"/>
+                            <Image Source="{Binding Icon}" Width="40" Height="40"/>
+                            <TextBlock Text="{Binding MaxTemp}" Foreground="White"/>
+                            <TextBlock Text="{Binding MinTemp}" Foreground="White" Opacity="0.7"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- 24時間グラフ（例：LiveCharts2）-->
+            <lvc:CartesianChart Grid.Row="2"
+                                Series="{Binding TemperatureSeries}"
+                                Foreground="White"
+                                LegendPosition="None"
+                                Margin="0 20"/>
+
+        </Grid>
+    </Grid>
+</Window>
