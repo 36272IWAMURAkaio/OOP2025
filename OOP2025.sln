@@ -243,6 +243,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIImageApp", "WPF\AIImageAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceConverter", "Chapter15\Strategy\DistanceConverter\DistanceConverter.csproj", "{796D0DB7-0C2E-50A0-33C8-EB6E3A81BE62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileProcessorDI", "Chapter15\TextFileProcessorDI\TextFileProcessorDI.csproj", "{4DB1B7B2-900F-F2AF-5FC8-FDDF0371B8B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -581,6 +583,10 @@ Global
 		{796D0DB7-0C2E-50A0-33C8-EB6E3A81BE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{796D0DB7-0C2E-50A0-33C8-EB6E3A81BE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{796D0DB7-0C2E-50A0-33C8-EB6E3A81BE62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB1B7B2-900F-F2AF-5FC8-FDDF0371B8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB1B7B2-900F-F2AF-5FC8-FDDF0371B8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB1B7B2-900F-F2AF-5FC8-FDDF0371B8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB1B7B2-900F-F2AF-5FC8-FDDF0371B8B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -682,6 +688,7 @@ Global
 		{362A9099-08FB-4223-BC97-06F1A567DA3B} = {EA204278-8FD4-4685-BF74-3446FBC8BD00}
 		{4D836B7D-F3C4-4450-AC52-A42F7E7BDD82} = {DA49D911-93A2-4D8C-BBF5-EB1436EBD7A6}
 		{796D0DB7-0C2E-50A0-33C8-EB6E3A81BE62} = {E58A0B68-2E3F-4DA3-9528-BFBF0E7131E1}
+		{4DB1B7B2-900F-F2AF-5FC8-FDDF0371B8B5} = {64BF2E1C-5EF4-44E6-A0E2-8BB7D4BBC860}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8719ABA0-EEAE-4DFD-9F13-F9A24176C3CB}

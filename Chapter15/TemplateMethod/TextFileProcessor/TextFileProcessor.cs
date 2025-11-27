@@ -1,21 +1,27 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TextFileProcessor {
-    public class TextFileProcessor {
-        private ITextFileService _service;
-
-        public TextFileProcessor(ITextFileService service) {
-            _service = service;
+    public abstract class TextFileProcessor {
+        public static void Run<T>(string fileName) where T : TextFileProcessor, new() {
+            var self = new T();
+            self.Process(fileName);
         }
 
-        public void Run(string fileName) {
-            _service.Initialize(fileName);
-
-            foreach (var line in File.ReadLines(fileName)) {
-                _service.Execute(line);
+        private void Process(string fileName) {
+            Initialize(fileName);
+            var lines = File.ReadLines(fileName);
+            foreach (var line in lines) {
+                Execute(line);
             }
-
-            _service.Terminate();
+            Terminate();
         }
+
+        protected virtual void Initialize(string fname) { }
+        protected virtual void Execute(string line) { }
+        protected virtual void Terminate() { }
     }
 }
